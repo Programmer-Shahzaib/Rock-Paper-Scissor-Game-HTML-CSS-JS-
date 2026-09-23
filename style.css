@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header {
+    color: #f1f5f9;
+    background-color: #0b1220;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #1e293b;
+}
+
+#header h2 {
+    font-weight: 600;
+    transition: 0.4s ease;
+}
+
+#header h2:hover {
+    color: #38bdf8;
+    cursor: pointer;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+    transform: scale(1.05);
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+    gap: 50px;
+}
+
+#rock,
+#scissor,
+#paper {
+    color: #f8fafc;
+    font-size: 50px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+#rock:hover,
+#paper:hover,
+#scissor:hover {
+    cursor: pointer;
+    transform: translateY(-6px);
+    border-color: #38bdf8;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.45);
+}
+
+#rock:active,
+#paper:active,
+#scissor:active {
+    transform: translateY(-2px) scale(0.96);
+}
+
+#scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 90px;
+}
+
+#you,
+#comp {
+    color: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 110px;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transition: 0.3s ease;
+}
+
+#you h3,
+#comp h3 {
+    font-size: 22px;
+    color: #38bdf8;
+}
+
+#you h2,
+#comp h2 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+#you:hover,
+#comp:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+#winningText {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    height: 60px;
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 55px;
+    color: #f1f5f9;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transition: 0.3s ease;
+    padding: 0 16px;
+    text-align: center;
+}
+
+#winningText h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#winningText:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.3);
+}
+
+#restart {
+    width: 150px;
+    height: 46px;
+    margin-top: 28px;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #0b1220;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
+    transition: 0.3s ease;
+}
+
+#restart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(14, 165, 233, 0.55);
+}
+
+#restart:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+
+
+
+
+
+/* Responsive layout */
+body {
+    overflow-x: hidden;
+}
+
+#game,
+#scores,
+#winningText,
+#restart {
+    max-width: calc(100vw - 32px);
+}
+
+#winningText {
+    width: min(400px, calc(100vw - 32px)) !important;
+    min-height: 60px;
+    height: auto;
+    padding: 12px 16px;
+}
+
+@media (max-width: 600px) {
+    #header {
+        height: 58px;
+        padding: 0 16px;
+    }
+
+    #header h2 {
+        font-size: clamp(19px, 6vw, 25px);
+        text-align: center;
+    }
+
+    #game {
+        gap: clamp(12px, 5vw, 24px);
+        margin-top: 38px;
+    }
+
+    #rock,
+    #paper,
+    #scissor {
+        width: clamp(78px, 24vw, 100px);
+        height: clamp(78px, 24vw, 100px);
+        font-size: clamp(34px, 11vw, 46px);
+    }
+
+    #scores {
+        gap: clamp(24px, 12vw, 52px);
+        margin-top: 56px;
+    }
+
+    #you,
+    #comp {
+        width: clamp(90px, 28vw, 110px);
+        height: 68px;
+    }
+
+    #winningText {
+        margin-top: 42px;
+        border-radius: 12px;
+    }
+
+    #winningText h2 {
+        font-size: clamp(14px, 4vw, 16px);
+        line-height: 1.35;
+    }
+
+    #restart {
+        margin-top: 24px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    #game {
+        gap: 34px;
+    }
+
+    #scores {
+        gap: 54px;
+        margin-top: 72px;
+    }
+
+    #winningText {
+        margin-top: 46px;
+    }
+}
+
+@media (max-width: 360px) {
+    #game {
+        gap: 8px;
+    }
+
+    #scores {
+        gap: 18px;
+    }
+
+    #you,
+    #comp {
+        width: 88px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    #header {
+        height: 76px;
+    }
+
+    #header h2 {
+        font-size: 26px;
+    }
+
+    #game {
+        gap: clamp(34px, 7vw, 70px);
+        margin-top: 70px;
+    }
+
+    #rock,
+    #paper,
+    #scissor {
+        width: clamp(125px, 14vw, 150px);
+        height: clamp(125px, 14vw, 150px);
+        font-size: clamp(54px, 6vw, 68px);
+    }
+
+    #scores {
+        gap: clamp(54px, 9vw, 96px);
+        margin-top: 100px;
+    }
+
+    #you,
+    #comp {
+        width: clamp(125px, 15vw, 155px);
+        height: 86px;
+    }
+
+    #you h3,
+    #comp h3 {
+        font-size: 28px;
+    }
+
+    #you h2,
+    #comp h2 {
+        font-size: 16px;
+    }
+
+    #winningText {
+        width: min(520px, calc(100vw - 48px)) !important;
+        margin-top: 68px;
+        min-height: 72px;
+    }
+
+    #winningText h2 {
+        font-size: 18px;
+    }
+
+    #restart {
+        width: 180px;
+        height: 54px;
+        font-size: 18px;
+        margin-top: 34px;
+    }
+}
