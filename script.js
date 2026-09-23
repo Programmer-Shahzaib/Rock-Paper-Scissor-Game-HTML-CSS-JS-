@@ -15,6 +15,7 @@ let userChoice = "";
 let userscore = 0;
 let compscore = 0;
 
+
 //Restart Function
 
 const RestartGame = () => {
@@ -79,6 +80,7 @@ const showWinner = () => {
         winnerText.style.color = "#f40909";
         winnerBox.style.width = "400px";
         winnerBox.style.boxShadow = "0 0 25px rgba(227, 17, 17, 0.4)";
+
 
         // Paper beats Rock
         if (userChoice === "rock" && compChoice === "paper") {
